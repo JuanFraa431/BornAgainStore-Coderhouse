@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <!-- ICONO -->
+    <link rel="shortcut icon" href="../Imagenes/Logo.ico" type="image/x-icon">
+    <!-- BootsTrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>BornAgainStore Argentina | Envios</title>
+    <script src="https://kit.fontawesome.com/794b132898.js" crossorigin="anonymous"></script>
+    <!-- fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+    </style>
+    <!-- Descripcion -->
+    <meta name="description" content="Envios a todo el pais, Rosario envios gratis, proximamente envios al exterior.">
+    <!-- keywords -->
+    <meta name="keywords" content="ropa,under,oberzise,pantalones,gorras,buzos,joguers,gorros,calle,cargos">
+    <!-- Firma -->
+    <meta name="author" content="Juan Francisco Alaniz">
+    <!-- Propiedades -->
+    <meta property="og:title" content="BornAgainStore Argentina | Envios">
+    <meta property="og:image" content="Imagenes/Logo.png">
+    <meta property="og:description" content="Tienda de ropa under. Estilo y calidad son dos caracteristicas que nos describen. Somos BornAgainStore.">
+    <meta property="og:creator" content="Juan Francisco Alaniz">
+    <meta property="og:url" content="bornagainstore.infinityfreeapp.com">
+</head>
+
+<body id="IniciarSesion">
+
+    <!-- Inicio Header -->
+
+    <header class="header__unete">
+        <nav class="navbar navbar-dark fixed-top">
+            <div class="container-fluid logo">
+                <a class="navbar-brand" href="../index.html"><img src="../Imagenes/Logo.png"
+                        alt="Logo BornAgainStore"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <p class="offcanvas-title" id="offcanvasDarkNavbarLabel">BORN AGAIN STORE</p>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../index.html">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../Pages/Productos.html">PRODUCTOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../Pages/Unete.html">UNETE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../Pages/IniciarSesion.html">INICIAR
+                                    SESION</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../Pages/Nosotros.html">NOSOTROS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../Pages/Envios.html">ENVIOS</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+                            <button class="btn btn-success" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Fin Header -->
+
+
+
+
+    <section class="conteiner__locales">
+        <section class="formulario">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label ">Nombre</label>
+                    <input type="text" class="form-control bg-black text-white" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Apellido</label>
+                    <input type="text" class="form-control bg-black text-white" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Email</label>
+                    <input type="email" class="form-control bg-black text-white" id="inputAddress">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Direccion</label>
+                    <input type="text" class="form-control bg-black text-white" id="inputAddress2">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control bg-black text-white" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Provincia</label>
+                    <select id="inputState" class="form-select bg-black text-white">
+                        <option selected>Elegir...</option>
+                        <option>Buenos Aires</option>
+                        <option>Ciudad Autónoma de Buenos Aires</option>
+                        <option>Catamarca</option>
+                        <option>Chaco</option>
+                        <option>Chubut</option>
+                        <option>Córdoba</option>
+                        <option>Corrientes</option>
+                        <option>Entre Ríos</option>
+                        <option>Formosa</option>
+                        <option>Jujuy</option>
+                        <option>La Pampa</option>
+                        <option>La Rioja</option>
+                        <option>Mendoza</option>
+                        <option>Misiones</option>
+                        <option>Neuquén</option>
+                        <option>Río Negro</option>
+                        <option>Salta</option>
+                        <option>San Juan</option>
+                        <option>San Luis</option>
+                        <option>Santa Cruz</option>
+                        <option>Santa Fe</option>
+                        <option>Santiago del Estero</option>
+                        <option>Tierra del Fuego</option>
+                        <option>Tucumán</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="inputZip" class="form-label">C. P.</label>
+                    <input type="text" class="form-control bg-black text-white" id="inputZip">
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Envio a domicilio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Envio a sucursal de correo
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-outline-secondary">Calcular envio</button>
+                </div>
+            </form>
+        </section>
+        <section class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26792.914058525555!2d-60.68299866872706!3d-32.921579375647845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b654abc3ab1d5f%3A0x2f90ce97db2c5a6!2sAlto%20Rosario%20Shopping!5e0!3m2!1ses-419!2sar!4v1682623025225!5m2!1ses-419!2sar"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </section>
+
+    <footer>
+
+        <div class="principal__footer">
+
+            <div class="mails">
+                <p>DEJANOS TU MAIL PARA NOVEDADES</p>
+                <div class="buscador">
+                    <input type="text" placeholder="Email...">
+                    <button><i class="fa-solid estilobusqueda fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="section-footer-uno">
+                <nav class="nav-footer">
+                    <ul>
+                        <li>
+                            <p>CATEGORIAS</p>
+                        </li>
+                        <li>
+                            <a href="" class="boton_footer">- NEW COLECTION -</a>
+                        </li>
+                        <li>
+                            <a href="" class="boton_footer">- GIFT CARDS -</a>
+                        </li>
+                        <li>
+                            <a href="" class="boton_footer">- CONTACTO -</a>
+                        </li>
+                        <li>
+                            <a href="" class="boton_footer">- INFORMACION -</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="contactos">
+                <ul>
+                    <li>
+                        <p>FAQ</p>
+                    </li>
+                    <li>
+                        <a href="" class="boton_footer">- MAYORISTA -</a>
+                    </li>
+                    <li>
+                        <a href="" class="boton_footer">- PREGUNTAS FRECUENTES -</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="contactos">
+                <ul>
+                    <li>
+                        <P>CONTACTANOS</P>
+                        <p class="contactos__p"> <img src="../Imagenes/llamada.png" alt="Imagen llamada"
+                                class="imagenes-contacto">
+                            (0341) 123483456</p>
+
+                        <p class="contactos__p"> <img src="../Imagenes/correo.png" alt="Imagen correo"
+                                class="imagenes-contacto">
+                            BornAgainStore@tiendaonline.com</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="acordeon">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <div class="accordion-item bg-black">
+                    <h2 class="accordion-header bg-black">
+                        <button class="accordion-button bg-black text-light collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                            aria-controls="flush-collapseOne">
+                            CATEGORIAS
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="botones__acordeon">
+                            <a href="">- NEW COLECTION -</a>
+                            <a href="">- GIFT CARDS -</a>
+                            <a href="">- CONTACTO -</a>
+                            <a href="">- INFORMACION -</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-black ">
+                    <h2 class="accordion-header bg-black">
+                        <button class="accordion-button bg-black text-light collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                            aria-controls="flush-collapseTwo">
+                            FAQ
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="botones__acordeon">
+                            <a href="">- MAYORISTA -</a>
+                            <a href="">- PREGUNTAS FRECUENTES -</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-black ">
+                    <h2 class="accordion-header bg-black">
+                        <button class="accordion-button bg-black text-light collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            CONTACTANOS
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div>
+                            <p class="contactos__acordeon"> <img src="../Imagenes/llamada.png" alt="Imagen llamada"
+                                    class="imagenes-contacto"> (0341) 123483456</p>
+                            <p class="contactos__acordeon"> <img src="../Imagenes/correo.png" alt="Imagen correo"
+                                    class="imagenes-contacto"> BornAgainStore@tiendaonline.com</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <div class="section-footer-dos">
+            <article class="metodos-pagos">
+                <img src="../Imagenes/visa.png" alt="Imagen tarjeta visa">
+                <img src="../Imagenes/mastercard.png" alt="Imagen tarjeta mastercard">
+                <img src="../Imagenes/american.png" alt="Imagen tarjeta american">
+                <img src="../Imagenes/diners.png" alt="Imagen tarjeta diners">
+                <img src="../Imagenes/paypal.png" alt="Imagen tarjeta paypal">
+                <img src="../Imagenes/cabal.png" alt="Imagen tarjeta cabal">
+                <img src="../Imagenes/naranja.png" alt="Imagen tarjeta naranja">
+                <img src="../Imagenes/tarjetashopping.png" alt="Imagen tarjetashopping">
+                <img src="../Imagenes/mercadopago.png" alt="Imagen tarjeta mercadopago">
+                <img src="../Imagenes/argencard.png" alt="Imagen tarjeta argencard">
+            </article>
+        </div>
+
+
+        <div class="sections-footer-tres">
+            <div class="div-section-tres">
+                <span>Defensa de las y los consumidores. Para reclamos <a
+                        href="https://autogestion.produccion.gob.ar/consumidores">ingrese aqui</a> </span>
+            </div>
+        </div>
+
+        <div class="div2_section_tres">
+            <p id="lineasDerechosDeAut"><i class="fa-regular fa-copyright"></i> Copyright BornAgainStore - 2023</p>
+            <p id="lineasDerechosDeAut">Todos los derechos reservados</p>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
