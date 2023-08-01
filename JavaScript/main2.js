@@ -1,6 +1,7 @@
-function cargarProductosIndex() {
-    const productos = [];
-    class producto {
+
+function cargarProductosPageProductos() {
+    const productos2 = [];
+    class producto2 {
         constructor(nombre, precio, stock, id, tipo, img, cantidad) {
             this.nombre = nombre;
             this.precio = precio;
@@ -12,22 +13,28 @@ function cargarProductosIndex() {
         }
     }
 
-    let buzoHombre = new producto(`Buzo "THER IS" Black`, 14000, 10, 1, "Buzo", "producto1.jpg", 1)
-    let gorro = new producto("Gorro VVS White", 7000, 15, 2, "Gorro", "producto2.jpg", 1)
-    let babuchaHombre = new producto("Babucha FY YOUNG Black", 7000, 15, 3, "Babucha", "producto3.webp", 1)
-    let buzoHombre2 = new producto(`Buzo "THER IS" Blue`, 14000, 10, 4, "Buzo", "producto4.jpg", 1)
-    let remeraHombre = new producto(`Remera "INTO YOU" Black`, 8000, 20, 5, "Gorro", "producto5.jpg", 1)
-    let buzoHombre3 = new producto(`Buzo VVS "THE STAFF" Black`, 14000, 7, 6, "Buzo", "producto6.jpg", 1)
-    let jeanHombre = new producto("Jean BORN SINNER White", 20000, 5, 7, "Jean", "producto7.jpg", 1)
-    let buzoHombre4 = new producto(`Buzo VVS "BNY" Black`, 14000, 3, 8, "Buzo", "producto8.jpg", 1)
-    let remeraHombre2 = new producto("Remera BUTTERFLY Black", 8000, 20, 9, "Gorro", "producto9.jpg", 1)
-    let buzoHombre5 = new producto(`Buzo VVS "NEW ITEMS" Black`, 14000, 8, 10, "Buzo", "producto10.jpg", 1)
+    let remeraHombre1 = new producto2("Remera BEYOND Black", 8000, 10, 11, "Remera", "ropa1.webp", 1)
+    let remeraHombre2 = new producto2("Remera BEYOND White", 8000, 15, 12, "Remera", "ropa2.webp", 1)
+    let buzoHombre1 = new producto2("Buzo BEYOND Black", 14000, 15, 13, "Buzo", "ropa3.webp", 1)
+    let buzoHombre2 = new producto2("Buzo BEYOND White", 14000, 10, 14, "Buzo", "ropa4.webp", 1)
+    let buzoHombre3 = new producto2("Buzo PURPLE Night", 14000, 20, 15, "Buzo", "ropa5.webp", 1)
+    let gorra = new producto2("Gorra BEYOND", 5000, 7, 16, "Gorra", "ropa6.webp", 1)
+    let gorro = new producto2("Gorro BEYOND", 6000, 5, 17, "Gorro", "ropa7.webp", 1)
+    let remeraHombre3 = new producto2("Remera PURPLE Night", 8000, 3, 18, "Remera", "ropa8.webp", 1)
+    let remeraHombre4 = new producto2("Remera FLAME White", 8000, 20, 19, "Remera", "ropa9.webp", 1)
+    let buzoHombre4 = new producto2("Buzo BEYOND Purple", 14000, 8, 20, "Buzo", "ropa10.webp", 1)
+    let babucha = new producto2("Babucha BEYOND White", 12000, 20, 21, "Babucha", "ropa11.webp", 1)
+    let gorra2 = new producto2("Gorra RAIN Black", 5000, 7, 22, "Gorra", "ropa12.webp", 1)
+    let babucha2 = new producto2("Babucha BEYOND Black", 20000, 5, 23, "Babucha", "ropa13.webp", 1)
+    let remeraHombre5 = new producto2("Remera REBORN White", 8000, 3, 24, "Remera", "ropa14.webp", 1)
+    let buzoHombre5 = new producto2("Buzo BYND White", 14000, 15, 25, "Buzo", "ropa15.webp", 1)
+    let buzoHombre6 = new producto2("Buzo BEYOND PurpleNight", 14000, 8, 26, "Buzo", "ropa16.webp", 1)
 
 
-    productos.push(buzoHombre, gorro, babuchaHombre, buzoHombre2, remeraHombre, buzoHombre3, jeanHombre, buzoHombre4, remeraHombre2, buzoHombre5)
-    return productos
+
+    productos2.push(remeraHombre1, remeraHombre2, buzoHombre1, buzoHombre2, buzoHombre3, gorra, gorro, remeraHombre3, remeraHombre4, buzoHombre4, babucha, gorra2, babucha2, remeraHombre5, buzoHombre5, buzoHombre6)
+    return productos2
 }
-
 
 
 const verifico = JSON.parse(localStorage.getItem("compra"))
@@ -77,7 +84,7 @@ function contadorsito() {
 let compruebo2 = []
 
 function agregaCarrito() {
-    let productos = cargarProductosIndex()
+    let productos = cargarProductosPageProductos()
     let carrito = []
     let botones = document.getElementsByClassName('boton_carrito')
     for (const boton of botones) {
@@ -224,29 +231,27 @@ function eliminarElementos() {
         }
     }
 }
-
-
-function agregarProducto() {
-    let productos = cargarProductosIndex()
-    let container = document.getElementById('container_item')
-    for (const product of productos) {
-        let card = document.createElement('div')
-        card.classList.add("item")
-        card.innerHTML = `
+function agregarProducto2() {
+    let productos2 = cargarProductosPageProductos()
+    console.log(productos2)
+    let container2 = document.getElementById('container_item2')
+    for (const producto of productos2) {
+        let card2 = document.createElement('div')
+        card2.classList.add("item")
+        card2.innerHTML = `
                 <figure>
-                    <img src="Imagenes/imagenes productos/${product.img}" alt="${product.tipo}" >
+                <img src="../Imagenes/imagenes productos/${producto.img}" alt="${producto.tipo}">
                 </figure>
                 <div class="info-product">
-                    <p>${product.nombre}</p>
-                    <p class="price">$${product.precio}</p>
-                    <button class="boton_carrito" id="${product.id}">Añadir al carrito</button>
+                    <p>${producto.nombre}</p>
+                    <p class="price">$${producto.precio}</p>
+                    <button class="boton_carrito" id="${producto.id}">Añadir al carrito</button>
                 </div>
         `
-        container.appendChild(card)
+        container2.appendChild(card2)
     }
 }
-cargarProductosIndex()
-agregarProducto()
+cargarProductosPageProductos()
+agregarProducto2()
 agregaCarrito()
-
 
