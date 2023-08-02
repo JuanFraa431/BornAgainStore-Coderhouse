@@ -120,3 +120,66 @@ formulario.inputCCV.addEventListener('keyup', () => {
 
 	ccv.textContent = formulario.inputCCV.value;
 });
+
+function volverindex() {
+	let cancelarCompra = document.getElementById('cancelar')
+	cancelarCompra.onclick = () => {
+		let timerInterval
+		Swal.fire({
+		icon:'error',
+		title: 'Cancelando compra...',
+		timer: 1600,
+		timerProgressBar: true,
+		didOpen: () => {
+			Swal.showLoading()
+			const b = Swal.getHtmlContainer().querySelector('b')
+			timerInterval = setInterval(() => {
+			b.textContent = Swal.getTimerLeft()
+			}, 100)
+		},
+		willClose: () => {
+			clearInterval(timerInterval)
+		}
+		}).then((result) => {
+		if (result.dismiss === Swal.DismissReason.timer) {
+			console.log('I was closed by the timer')
+		}
+		})
+        setTimeout(() => {
+            window.location.href = "../index.html";
+        }, 1600);
+    }
+}
+function pagarYVolverindex() {
+	let cancelarCompra = document.getElementById('pagar')
+	cancelarCompra.onclick = () => {
+		let timerInterval
+		Swal.fire({
+		icon:'success',
+		title: 'Realizando el pago...',
+		timer: 3000,
+		timerProgressBar: true,
+		didOpen: () => {
+			Swal.showLoading()
+			const b = Swal.getHtmlContainer().querySelector('b')
+			timerInterval = setInterval(() => {
+			b.textContent = Swal.getTimerLeft()
+			}, 100)
+		},
+		willClose: () => {
+			clearInterval(timerInterval)
+		}
+		}).then((result) => {
+		if (result.dismiss === Swal.DismissReason.timer) {
+			console.log('I was closed by the timer')
+		}
+		})
+        setTimeout(() => {
+            window.location.href = "../index.html";
+        }, 3000);
+    }
+}
+pagarYVolverindex()
+volverindex()
+
+

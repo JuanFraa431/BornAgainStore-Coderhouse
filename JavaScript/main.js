@@ -23,7 +23,6 @@ function cargarProductosIndex() {
     let remeraHombre2 = new producto("Remera BUTTERFLY Black", 8000, 20, 9, "Gorro", "producto9.jpg", 1)
     let buzoHombre5 = new producto(`Buzo VVS "NEW ITEMS" Black`, 14000, 8, 10, "Buzo", "producto10.jpg", 1)
 
-
     productos.push(buzoHombre, gorro, babuchaHombre, buzoHombre2, remeraHombre, buzoHombre3, jeanHombre, buzoHombre4, remeraHombre2, buzoHombre5)
     return productos
 }
@@ -82,9 +81,9 @@ function agregaCarrito() {
     let botones = document.getElementsByClassName('boton_carrito')
     for (const boton of botones) {
         boton.onclick = (e) => {
-            swal({
-                title: 'Producto agregado al carrito con exito',
+            Swal.fire({
                 icon: 'success',
+                title: 'Producto agregado al carrito con exito',
             })
             let compraProductos = productos.find((el) => el.id === parseInt(e.target.id))
             let compruebo = JSON.parse(localStorage.getItem("compra"))
@@ -132,7 +131,6 @@ function agregaCarrito() {
                 contadorsito()
                 carrito = []
                 eliminarElementos()
-
             }
             const carritoGuardado = JSON.parse(localStorage.getItem("compra")) || []
             if (carritoGuardado.length > 0) {
@@ -151,10 +149,27 @@ let botonLimpiarCarrito = document.getElementById('finalCompra')
 botonLimpiarCarrito.onclick = () => {
     const carritoCompruebo = JSON.parse(localStorage.getItem("compra"))
     if (carritoCompruebo) {
-        swal({
-            title: 'Su compra se ha procesado correctamente',
-            icon: 'success',
-        })
+        let timerInterval
+		Swal.fire({
+        icon:'success',
+		title: 'Procesando compra...',
+		timer: 1600,
+		timerProgressBar: true,
+		didOpen: () => {
+			Swal.showLoading()
+			const b = Swal.getHtmlContainer().querySelector('b')
+			timerInterval = setInterval(() => {
+			b.textContent = Swal.getTimerLeft()
+			}, 100)
+		},
+		willClose: () => {
+			clearInterval(timerInterval)
+		}
+		}).then((result) => {
+		if (result.dismiss === Swal.DismissReason.timer) {
+			console.log('I was closed by the timer')
+		}
+		})
         setTimeout(() => {
             localStorage.clear()
             contadorsito()
@@ -162,12 +177,13 @@ botonLimpiarCarrito.onclick = () => {
             vaciar.innerHTML = `
                 <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
                 `
-            window.location.href = "Pages/tarjeta.html";
+            window.location.href = "../Pages/tarjeta.html";
         }, 1600);
     } else {
-        swal({
-            title: 'No hay productos en el carrito.',
+        Swal.fire({
             icon: 'error',
+            title: 'Error...',
+            text: 'No hay productos en el carrito!',
         })
     }
 }
@@ -206,7 +222,6 @@ function eliminarElementos() {
                 }, 300);
                 
             } else {
-                console.log("quiero borrar el div")
                 carritoEliminar.splice(index, 1)
                 localStorage.setItem("compra", JSON.stringify(carritoEliminar))
                 let divProducto = document.getElementById(`${e.target.id}-div`)

@@ -1019,6 +1019,10 @@ body::-webkit-scrollbar-thumb:hover {
   transform: scale(0.8);
 }
 
+.body-tarjeta {
+  background-color: rgb(255, 255, 255);
+}
+
 /* ---------- Estilos Generales de las Tarjetas ----------*/
 .tarjeta {
 	width: 90%;
@@ -1162,7 +1166,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* ---------- Formulario Tarjeta ----------*/
 .formulario-tarjeta {
-	background: #fff;
+  background-color: #dcdcdc;
 	width: 100%;
 	max-width: 700px;
 	padding: 180px 30px 30px 30px;
@@ -1180,9 +1184,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 .formulario-tarjeta label {
 	display: block;
-	color: #7d8994;
+	color: rgb(59, 59, 59);
 	margin-bottom: 5px;
-	font-size: 16px;
+	font-size: 17px;
 }
 
 .formulario-tarjeta input,
@@ -1209,8 +1213,10 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .formulario-tarjeta input {
+  background-color: white;
 	margin-bottom: 20px;
 	text-transform: uppercase;
+  color: #000000;
 }
 
 .formulario-tarjeta .flexbox {
@@ -1232,9 +1238,18 @@ body::-webkit-scrollbar-thumb:hover {
 	position: relative;
 }
 
+.grupo-select select {
+  color: black;
+}
+
+.grupo-select select option {
+  color: black;
+  font-size: 15px;
+}
+
 .formulario-tarjeta .grupo-select i {
 	position: absolute;
-	color: #CED6E0;
+	color: #ffffff;
 	top: 18px;
 	right: 15px;
 	transition: .3s ease all;
@@ -1249,13 +1264,35 @@ body::-webkit-scrollbar-thumb:hover {
 	padding: 10px;
 	font-size: 22px;
 	color: #fff;
-	background: #2364d2;
-	box-shadow: 2px 2px 10px 0px rgba(0,85,212,0.4);
+	box-shadow: 2px 2px 6px 0px rgba(183, 188, 184, 0.4);
 	cursor: pointer;
 }
 
-.formulario-tarjeta .btn-enviar:hover {
-	background: #1850b1;
+#pagar {
+  background: #66ac64;
+}
+
+.cancelar {
+  background: #bf4f4f;
+}
+
+.contenedor-botones {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contenedor-botones button{
+  width: 40%;
+}
+
+.formulario-tarjeta #pagar:hover {
+	background: #16cf57;
+  box-shadow: 2px 2px 10px 0px rgba(29, 156, 55, 0.4);
+}
+
+.formulario-tarjeta .cancelar:hover {
+	background: #c71616;
+  box-shadow: 2px 2px 10px 0px rgba(174, 27, 27, 0.4);
 }
 /* fin tarjeta */
 

@@ -162,12 +162,15 @@ botonLimpiarCarrito.onclick = () => {
             title: 'Su compra se ha procesado correctamente',
             icon: 'success',
         })
-        localStorage.clear()
-        contadorsito()
-        let vaciar = document.getElementById("contenedorDeTodo")
-        vaciar.innerHTML = `
-            <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
-            `
+        setTimeout(() => {
+            localStorage.clear()
+            contadorsito()
+            let vaciar = document.getElementById("contenedorDeTodo")
+            vaciar.innerHTML = `
+                <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
+                `
+            window.location.href = "../Pages/tarjeta.html";
+        }, 1600);
     } else {
         swal({
             title: 'No hay productos en el carrito.',
