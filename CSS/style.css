@@ -723,6 +723,8 @@ footer a {
   .tarjeta > div {
     padding: 22px !important;
 }
+.formulario-tarjeta {
+	padding: 190px 30px 30px 30px !important;
 }
 @media (min-width: 1280px) {
   .acordeon {
