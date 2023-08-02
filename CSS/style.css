@@ -722,10 +722,7 @@ footer a {
   }
   .tarjeta > div {
     padding: 22px !important;
-  }
-  .formulario-tarjeta {
-	padding: 190px 30px 30px 30px !important;
-  }
+}
 }
 @media (min-width: 1280px) {
   .acordeon {
@@ -1168,7 +1165,7 @@ body::-webkit-scrollbar-thumb:hover {
 	background: #fff;
 	width: 100%;
 	max-width: 700px;
-	padding: 190px 30px 30px 30px;
+	padding: 180px 30px 30px 30px;
 	border-radius: 10px;
 	position: relative;
 	top: -150px;
