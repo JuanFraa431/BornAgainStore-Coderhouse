@@ -89,9 +89,9 @@ function agregaCarrito() {
     let botones = document.getElementsByClassName('boton_carrito')
     for (const boton of botones) {
         boton.onclick = (e) => {
-            swal({
-                title: 'Producto agregado al carrito con exito',
+            Swal.fire({
                 icon: 'success',
+                title: 'Producto agregado al carrito con exito',
             })
             let compraProductos = productos.find((el) => el.id === parseInt(e.target.id))
             let compruebo = JSON.parse(localStorage.getItem("compra"))
@@ -158,10 +158,26 @@ let botonLimpiarCarrito = document.getElementById('finalCompra')
 botonLimpiarCarrito.onclick = () => {
     const carritoCompruebo = JSON.parse(localStorage.getItem("compra"))
     if (carritoCompruebo) {
-        swal({
-            title: 'Su compra se ha procesado correctamente',
-            icon: 'success',
-        })
+        Swal.fire({
+            icon:'success',
+            title: 'Procesando compra...',
+            timer: 1600,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+            }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+            }
+            })
         setTimeout(() => {
             localStorage.clear()
             contadorsito()
@@ -172,9 +188,10 @@ botonLimpiarCarrito.onclick = () => {
             window.location.href = "/Pages/tarjeta.html";
         }, 1600);
     } else {
-        swal({
-            title: 'No hay productos en el carrito.',
+        Swal.fire({
             icon: 'error',
+            title: 'Error...',
+            text: 'No hay productos en el carrito!',
         })
     }
 }
