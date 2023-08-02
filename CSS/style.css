@@ -714,6 +714,15 @@ footer a {
   .div2_section_tres p {
     font-size: 8px;
   }
+  .delantera .chip {
+    max-width: 40px !important; 
+  }
+  .delantera .logo-marca img {
+    max-width: 60px !important;
+  }
+  .tarjeta > div {
+    padding: 22px !important;
+}
 }
 @media (min-width: 1280px) {
   .acordeon {
@@ -1014,7 +1023,6 @@ body::-webkit-scrollbar-thumb:hover {
 .tarjeta {
 	width: 90%;
 	max-width: 550px;
-  min-width: 230px;
 	position: relative;
 	color: #fff;
 	transition: .3s ease all;
@@ -1031,7 +1039,6 @@ body::-webkit-scrollbar-thumb:hover {
 .tarjeta > div {
 	padding: 30px;
 	border-radius: 15px;
-	min-height: 315px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -1065,7 +1072,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .delantera .grupo .label {
-	font-size: 16px;
+	font-size: 14px;
 	color: #7d8994;
 	margin-bottom: 5px;
 }
@@ -1074,7 +1081,7 @@ body::-webkit-scrollbar-thumb:hover {
 .delantera .grupo .nombre,
 .delantera .grupo .expiracion {
 	color: #fff;
-	font-size: 22px;
+	font-size: 18.5px;
 	text-transform: uppercase;
 }
 
@@ -1153,39 +1160,12 @@ body::-webkit-scrollbar-thumb:hover {
 	color: #fff;
 }
 
-/* ---------- Contenedor Boton ----------*/
-.contenedor-btn .btn-abrir-formulario {
-	width: 50px;
-	height: 50px;
-	font-size: 20px;
-	line-height: 20px;
-	background: #2364d2;
-	color: #fff;
-	position: relative;
-	top: -25px;
-	z-index: 3;
-	border-radius: 100%;
-	box-shadow: -5px 4px 8px rgba(24,56,182,0.4);
-	padding: 5px;
-	transition: all .2s ease;
-	border: none;
-	cursor: pointer;
-}
-
-.contenedor-btn .btn-abrir-formulario:hover {
-	background: #1850b1;
-}
-
-.contenedor-btn .btn-abrir-formulario.active {
-	transform: rotate(45deg);
-}
-
 /* ---------- Formulario Tarjeta ----------*/
 .formulario-tarjeta {
 	background: #fff;
 	width: 100%;
 	max-width: 700px;
-	padding: 150px 30px 30px 30px;
+	padding: 180px 30px 30px 30px;
 	border-radius: 10px;
 	position: relative;
 	top: -150px;
