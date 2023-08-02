@@ -146,7 +146,7 @@ function volverindex() {
 		}
 		})
         setTimeout(() => {
-            window.location.href = "/index.html";
+            window.location.href = "../index.html";
         }, 1600);
     }
 }
@@ -175,7 +175,7 @@ function pagarYVolverindex() {
 		}
 		})
         setTimeout(() => {
-            window.location.href = "/index.html";
+            window.location.href = "../index.html";
         }, 3000);
     }
 }
