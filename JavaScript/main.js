@@ -155,12 +155,15 @@ botonLimpiarCarrito.onclick = () => {
             title: 'Su compra se ha procesado correctamente',
             icon: 'success',
         })
-        localStorage.clear()
-        contadorsito()
-        let vaciar = document.getElementById("contenedorDeTodo")
-        vaciar.innerHTML = `
-            <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
-            `
+        setTimeout(() => {
+            localStorage.clear()
+            contadorsito()
+            let vaciar = document.getElementById("contenedorDeTodo")
+            vaciar.innerHTML = `
+                <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
+                `
+            window.location.href = "Pages/tarjeta.html";
+        }, 1600);
     } else {
         swal({
             title: 'No hay productos en el carrito.',
@@ -173,13 +176,10 @@ function eliminarElementos() {
     let botoncito = document.getElementsByClassName("boton-elimino")
     for (const boton of botoncito) {
         boton.onclick = (e) => {
-            console.log("se que apretaste el boton")
             let carritoEliminar = JSON.parse(localStorage.getItem("compra"))
-            console.log(carritoEliminar)
             let index = carritoEliminar.findIndex((el) => el.id === parseInt(e.target.id))
             let cantidadElimino = carritoEliminar[index].cantidad
             if (carritoEliminar.length === 1 && cantidadElimino === 1) {
-                console.log("quiero vaciar el local storage")
                 localStorage.clear()
                 carritoEliminar = []
                 let vaciar = document.getElementById("contenedorDeTodo")
@@ -190,11 +190,9 @@ function eliminarElementos() {
                     `
                     vaciar.classList.remove('removing')
                 }, 500);
-                
                 contadorsito()
             } else if (cantidadElimino > 1) {
 
-                console.log("quiero descontarle a la cantidad")
                 let animacionDescontar = document.getElementById(`${e.target.id}-div`)
                 animacionDescontar.classList.add('descontar');
                 setTimeout(() => {
@@ -214,7 +212,6 @@ function eliminarElementos() {
                 let divProducto = document.getElementById(`${e.target.id}-div`)
                 divProducto.classList.add('removing');
                 if (divProducto) {
-                    console.log("voy a entrar al settimeout")
                     setTimeout(() => {
                         divProducto.remove(); 
                     }, 500);
