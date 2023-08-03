@@ -1,0 +1,146 @@
+[
+    {
+        "nombre": "Remera BEYOND Black",
+        "precio": 8000,
+        "stock": 10,
+        "id": 11,
+        "tipo":"Remera",
+        "img":"ropa1.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Remera BEYOND White",
+        "precio": 8000,
+        "stock": 15,
+        "id": 12,
+        "tipo": "Remera",
+        "img": "ropa2.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Buzo BEYOND Black",
+        "precio": 14000,
+        "stock": 15,
+        "id": 13,
+        "tipo": "Buzo",
+        "img": "ropa3.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Buzo BEYOND White",
+        "precio": 14000,
+        "stock": 10,
+        "id": 14,
+        "tipo": "Buzo",
+        "img": "ropa4.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Buzo PURPLE Night",
+        "precio": 14000,
+        "stock": 20,
+        "id": 15,
+        "tipo": "Buzo",
+        "img": "ropa5.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Gorra BEYOND",
+        "precio": 5000,
+        "stock": 7,
+        "id": 16,
+        "tipo": "Gorra",
+        "img": "ropa6.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Gorro BEYOND",
+        "precio": 6000,
+        "stock": 5,
+        "id": 17,
+        "tipo": "Gorro",
+        "img": "ropa7.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Remera PURPLE Night",
+        "precio": 8000,
+        "stock": 3,
+        "id": 18,
+        "tipo": "Remera",
+        "img": "ropa8.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Remera FLAME White",
+        "precio": 8000,
+        "stock": 20,
+        "id": 19,
+        "tipo": "Remera",
+        "img": "ropa9.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Buzo BEYOND Purple",
+        "precio": 14000,
+        "stock": 8,
+        "id": 20,
+        "tipo": "Buzo",
+        "img": "ropa10.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Babucha BEYOND White",
+        "precio": 12000,
+        "stock": 10,
+        "id": 21,
+        "tipo":"Babucha",
+        "img": "ropa11.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Gorra RAIN Black",
+        "precio": 6000,
+        "stock": 10,
+        "id": 22,
+        "tipo":"Gorra",
+        "img": "ropa12.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Babucha BEYOND Black",
+        "precio": 12000,
+        "stock": 10,
+        "id": 23,
+        "tipo":"Babucha",
+        "img":"producto13.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Remera REBORN White",
+        "precio": 8000,
+        "stock": 10,
+        "id": 24,
+        "tipo":"Remera",
+        "img": "ropa14.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Buzo BYND White",
+        "precio": 14000,
+        "stock": 10,
+        "id": 25,
+        "tipo":"Buzo",
+        "img": "ropa15.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Buzo BEYOND PurpleNight",
+        "precio": 14000,
+        "stock": 10,
+        "id": 26,
+        "tipo":"Buzo",
+        "img": "ropa16.webp",
+        "cantidad": 1
+    }
+]

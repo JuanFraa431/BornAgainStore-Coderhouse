@@ -1,42 +1,4 @@
 
-function cargarProductosPageProductos() {
-    const productos2 = [];
-    class producto2 {
-        constructor(nombre, precio, stock, id, tipo, img, cantidad) {
-            this.nombre = nombre;
-            this.precio = precio;
-            this.stock = stock;
-            this.id = id;
-            this.tipo = tipo;
-            this.img = img;
-            this.cantidad = cantidad;
-        }
-    }
-
-    let remeraHombre1 = new producto2("Remera BEYOND Black", 8000, 10, 11, "Remera", "ropa1.webp", 1)
-    let remeraHombre2 = new producto2("Remera BEYOND White", 8000, 15, 12, "Remera", "ropa2.webp", 1)
-    let buzoHombre1 = new producto2("Buzo BEYOND Black", 14000, 15, 13, "Buzo", "ropa3.webp", 1)
-    let buzoHombre2 = new producto2("Buzo BEYOND White", 14000, 10, 14, "Buzo", "ropa4.webp", 1)
-    let buzoHombre3 = new producto2("Buzo PURPLE Night", 14000, 20, 15, "Buzo", "ropa5.webp", 1)
-    let gorra = new producto2("Gorra BEYOND", 5000, 7, 16, "Gorra", "ropa6.webp", 1)
-    let gorro = new producto2("Gorro BEYOND", 6000, 5, 17, "Gorro", "ropa7.webp", 1)
-    let remeraHombre3 = new producto2("Remera PURPLE Night", 8000, 3, 18, "Remera", "ropa8.webp", 1)
-    let remeraHombre4 = new producto2("Remera FLAME White", 8000, 20, 19, "Remera", "ropa9.webp", 1)
-    let buzoHombre4 = new producto2("Buzo BEYOND Purple", 14000, 8, 20, "Buzo", "ropa10.webp", 1)
-    let babucha = new producto2("Babucha BEYOND White", 12000, 20, 21, "Babucha", "ropa11.webp", 1)
-    let gorra2 = new producto2("Gorra RAIN Black", 5000, 7, 22, "Gorra", "ropa12.webp", 1)
-    let babucha2 = new producto2("Babucha BEYOND Black", 20000, 5, 23, "Babucha", "ropa13.webp", 1)
-    let remeraHombre5 = new producto2("Remera REBORN White", 8000, 3, 24, "Remera", "ropa14.webp", 1)
-    let buzoHombre5 = new producto2("Buzo BYND White", 14000, 15, 25, "Buzo", "ropa15.webp", 1)
-    let buzoHombre6 = new producto2("Buzo BEYOND PurpleNight", 14000, 8, 26, "Buzo", "ropa16.webp", 1)
-
-
-
-    productos2.push(remeraHombre1, remeraHombre2, buzoHombre1, buzoHombre2, buzoHombre3, gorra, gorro, remeraHombre3, remeraHombre4, buzoHombre4, babucha, gorra2, babucha2, remeraHombre5, buzoHombre5, buzoHombre6)
-    return productos2
-}
-
-
 const verifico = JSON.parse(localStorage.getItem("compra"))
 if (!verifico) {
     let contenedorVerificacion = document.getElementById("contenedorDeTodo")
@@ -84,73 +46,76 @@ function contadorsito() {
 let compruebo2 = []
 
 function agregaCarrito() {
-    let productos = cargarProductosPageProductos()
-    let carrito = []
-    let botones = document.getElementsByClassName('boton_carrito')
-    for (const boton of botones) {
-        boton.onclick = (e) => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Producto agregado al carrito con exito',
-            })
-            let compraProductos = productos.find((el) => el.id === parseInt(e.target.id))
-            let compruebo = JSON.parse(localStorage.getItem("compra"))
-            if (compruebo) {
-                const compruebo2 = JSON.parse(localStorage.getItem("compra"))
-                let indice = compruebo2.findIndex((el) => el.id === parseInt(e.target.id))
-                if (indice !== -1) {
-                    compruebo2[indice].cantidad++
-                    localStorage.setItem("compra", JSON.stringify(compruebo2))
-                    let muestroCarrito = document.getElementById(`cantidad-${compruebo2[indice].id}`)
-                    muestroCarrito.innerText = `Producto: ${compruebo2[indice].nombre} x${compruebo2[indice].cantidad} \n  Precio x unidad: $${compruebo2[indice].precio}`
-                    contadorsito()
-                    eliminarElementos()
+    fetch("../JavaScript/productos2.json")
+    .then((response) => response.json())
+    .then(productos => {
+        let carrito = []
+        let botones = document.getElementsByClassName('boton_carrito')
+        for (const boton of botones) {
+            boton.onclick = (e) => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Producto agregado al carrito con exito',
+                })
+                let compraProductos = productos.find((el) => el.id === parseInt(e.target.id))
+                let compruebo = JSON.parse(localStorage.getItem("compra"))
+                if (compruebo) {
+                    const compruebo2 = JSON.parse(localStorage.getItem("compra"))
+                    let indice = compruebo2.findIndex((el) => el.id === parseInt(e.target.id))
+                    if (indice !== -1) {
+                        compruebo2[indice].cantidad++
+                        localStorage.setItem("compra", JSON.stringify(compruebo2))
+                        let muestroCarrito = document.getElementById(`cantidad-${compruebo2[indice].id}`)
+                        muestroCarrito.innerText = `Producto: ${compruebo2[indice].nombre} x${compruebo2[indice].cantidad} \n  Precio x unidad: $${compruebo2[indice].precio}`
+                        contadorsito()
+                        eliminarElementos()
 
+                    } else {
+                        compruebo2.push(compraProductos)
+                        localStorage.setItem("compra", JSON.stringify(compruebo2))
+                        let indice2 = compruebo2.findIndex((el) => el.id === parseInt(e.target.id))
+                        let muestroCarrito = document.getElementById("contenedorDeTodo")
+                        let carritoMostrado = document.createElement("div")
+                        carritoMostrado.id = `${compruebo2[indice2].id}-div`
+                        carritoMostrado.classList.add("contenedorProductosCarrito")
+                        carritoMostrado.innerHTML = ` <p class="estilo" id="cantidad-${compruebo2[indice2].id}">Producto: ${compruebo2[indice2].nombre} x${compruebo2[indice2].cantidad} <br> Precio x unidad: $${compruebo2[indice2].precio}</p>
+                        <button id="${compruebo2[indice2].id}" class="boton-elimino bg-dark fa-solid fa-x"></button>
+                        <br>
+                        <div class="linea2"></div>`
+                        muestroCarrito.appendChild(carritoMostrado)
+                        contadorsito()
+                        eliminarElementos()
+                    }
                 } else {
-                    compruebo2.push(compraProductos)
-                    localStorage.setItem("compra", JSON.stringify(compruebo2))
-                    let indice2 = compruebo2.findIndex((el) => el.id === parseInt(e.target.id))
+                    carrito.push(compraProductos)
+                    localStorage.setItem("compra", JSON.stringify(carrito))
                     let muestroCarrito = document.getElementById("contenedorDeTodo")
                     let carritoMostrado = document.createElement("div")
-                    carritoMostrado.id = `${compruebo2[indice2].id}-div`
+                    carritoMostrado.id = `${carrito[0].id}-div` 
                     carritoMostrado.classList.add("contenedorProductosCarrito")
-                    carritoMostrado.innerHTML = ` <p class="estilo" id="cantidad-${compruebo2[indice2].id}">Producto: ${compruebo2[indice2].nombre} x${compruebo2[indice2].cantidad} <br> Precio x unidad: $${compruebo2[indice2].precio}</p>
-                    <button id="${compruebo2[indice2].id}" class="boton-elimino bg-dark fa-solid fa-x"></button>
+                    muestroCarrito.innerHTML = ``
+                    carritoMostrado.innerHTML = ` <p class="estilo" id="cantidad-${carrito[0].id}">Producto: ${carrito[0].nombre} x${carrito[0].cantidad} <br> Precio x unidad: $${carrito[0].precio}</p>
+                    <button id="${carrito[0].id}" class="boton-elimino bg-dark fa-solid fa-x"></button>
                     <br>
-                    <div class="linea2"></div>`
+                    <div class="linea2"></div>
+                    `
                     muestroCarrito.appendChild(carritoMostrado)
                     contadorsito()
+                    carrito = []
                     eliminarElementos()
-                }
-            } else {
-                carrito.push(compraProductos)
-                localStorage.setItem("compra", JSON.stringify(carrito))
-                let muestroCarrito = document.getElementById("contenedorDeTodo")
-                let carritoMostrado = document.createElement("div")
-                carritoMostrado.id = `${carrito[0].id}-div` 
-                carritoMostrado.classList.add("contenedorProductosCarrito")
-                muestroCarrito.innerHTML = ``
-                carritoMostrado.innerHTML = ` <p class="estilo" id="cantidad-${carrito[0].id}">Producto: ${carrito[0].nombre} x${carrito[0].cantidad} <br> Precio x unidad: $${carrito[0].precio}</p>
-                <button id="${carrito[0].id}" class="boton-elimino bg-dark fa-solid fa-x"></button>
-                <br>
-                <div class="linea2"></div>
-                `
-                muestroCarrito.appendChild(carritoMostrado)
-                contadorsito()
-                carrito = []
-                eliminarElementos()
 
-            }
-            const carritoGuardado = JSON.parse(localStorage.getItem("compra")) || []
-            if (carritoGuardado.length > 0) {
-                let vacio = document.getElementById("vacio")
-                let vacioS = document.getElementById("contenedorDeTodo")
-                if (vacio) {
-                    vacioS.removeChild(vacio)
+                }
+                const carritoGuardado = JSON.parse(localStorage.getItem("compra")) || []
+                if (carritoGuardado.length > 0) {
+                    let vacio = document.getElementById("vacio")
+                    let vacioS = document.getElementById("contenedorDeTodo")
+                    if (vacio) {
+                        vacioS.removeChild(vacio)
+                    }
                 }
             }
         }
-    }
+    })
 }
 
 
@@ -252,26 +217,27 @@ function eliminarElementos() {
     }
 }
 function agregarProducto2() {
-    let productos2 = cargarProductosPageProductos()
-    console.log(productos2)
-    let container2 = document.getElementById('container_item2')
-    for (const producto of productos2) {
-        let card2 = document.createElement('div')
-        card2.classList.add("item")
-        card2.innerHTML = `
-                <figure>
-                <img src="../Imagenes/imagenes productos/${producto.img}" alt="${producto.tipo}">
-                </figure>
-                <div class="info-product">
-                    <p>${producto.nombre}</p>
-                    <p class="price">$${producto.precio}</p>
-                    <button class="boton_carrito" id="${producto.id}">Añadir al carrito</button>
-                </div>
-        `
-        container2.appendChild(card2)
-    }
+    fetch("../JavaScript/productos2.json")
+    .then((response) => response.json())
+    .then(productos2 => {
+        let container2 = document.getElementById('container_item2')
+        for (const producto of productos2) {
+            let card2 = document.createElement('div')
+            card2.classList.add("item")
+            card2.innerHTML = `
+                    <figure>
+                    <img src="../Imagenes/imagenes productos/${producto.img}" alt="${producto.tipo}">
+                    </figure>
+                    <div class="info-product">
+                        <p>${producto.nombre}</p>
+                        <p class="price">$${producto.precio}</p>
+                        <button class="boton_carrito" id="${producto.id}">Añadir al carrito</button>
+                    </div>
+            `
+            container2.appendChild(card2)
+        }
+    })
 }
-cargarProductosPageProductos()
 agregarProducto2()
 agregaCarrito()
 

@@ -1,0 +1,92 @@
+[
+    {
+        "nombre": "Buzo `THER IS` Black",
+        "precio": 14000,
+        "stock": 10,
+        "id": 1,
+        "tipo":"Buzo",
+        "img":"producto1.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Gorro VVS White",
+        "precio": 7000,
+        "stock": 15,
+        "id": 2,
+        "tipo": "Gorro",
+        "img": "producto2.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Babucha FY YOUNG Black",
+        "precio": 9000,
+        "stock": 15,
+        "id": 3,
+        "tipo": "Babucha",
+        "img": "producto3.webp",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Buzo `THER IS` Blue",
+        "precio": 14000,
+        "stock": 10,
+        "id": 4,
+        "tipo": "Buzo",
+        "img": "producto4.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Remera `INTO YOU` Black",
+        "precio": 8000,
+        "stock": 20,
+        "id": 5,
+        "tipo": "Remera",
+        "img": "producto5.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre":"Buzo VVS `THE STAFF` Black",
+        "precio": 14000,
+        "stock": 7,
+        "id": 6,
+        "tipo": "Buzo",
+        "img": "producto6.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Jean BORN SINNER White",
+        "precio": 20000,
+        "stock": 5,
+        "id": 7,
+        "tipo": "Jean",
+        "img": "producto7.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Buzo VVS `BNY` Black",
+        "precio": 14000,
+        "stock": 3,
+        "id": 8,
+        "tipo": "Buzo",
+        "img": "producto8.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Remera BUTTERFLY Black",
+        "precio": 8000,
+        "stock": 20,
+        "id": 9,
+        "tipo": "Remera",
+        "img": "producto9.jpg",
+        "cantidad": 1
+    },
+    {
+        "nombre": "Buzo VVS `NEW ITEMS` Black",
+        "precio": 14000,
+        "stock": 8,
+        "id": 10,
+        "tipo": "Buzo",
+        "img": "producto10.jpg",
+        "cantidad": 1
+    }
+]
