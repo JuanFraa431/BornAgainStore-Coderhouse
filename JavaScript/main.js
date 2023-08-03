@@ -46,7 +46,7 @@ function contadorsito() {
 let compruebo2 = []
 
 function agregaCarrito() {
-    fetch("../JavaScript/productos.json")
+    fetch("JavaScript/productos.json")
     .then((response) => response.json())
     .then(productos => {
         let carrito = []

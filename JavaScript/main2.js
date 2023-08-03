@@ -217,7 +217,7 @@ function eliminarElementos() {
     }
 }
 function agregarProducto2() {
-    fetch("../JavaScript/productos2.json")
+    fetch("JavaScript/productos2.json")
     .then((response) => response.json())
     .then(productos2 => {
         let container2 = document.getElementById('container_item2')
