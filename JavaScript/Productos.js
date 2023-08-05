@@ -150,7 +150,7 @@ botonLimpiarCarrito.onclick = () => {
             vaciar.innerHTML = `
                 <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
                 `
-            window.location.href = "Tarjeta.html";
+            window.location.href = "TarjetaPagar.html";
         }, 1600);
     } else {
         Swal.fire({
