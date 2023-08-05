@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Obtenemos los valores de los campos de entrada
         const email2Value = email2Input.value.trim().toLowerCase();
         const passwordValue = passwordInput.value.trim();
-        let usuarioActivo = JSON.parse(localStorage.getItem('userActive'))
+        let usuarioActivo = JSON.parse(localStorage.getItem('userActivo'))
         // Comprobar si los campos están vacíos
         if (email2Value === '' || passwordValue === '') {
             Swal.fire({
@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Debes ingresar un email y una contraseña!',
             })
             return;
-        } else if (usuarioActivo !== null) {
-            console.log(usuarioActivo)
+        }else if (usuarioActivo !== null) {
             let timerInterval
             Swal.fire({
                 icon: 'error',
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 window.location.href = '../index.html';
             }, 3000);
-        } else {
+        }else {
             let usuarioEistente = JSON.parse(localStorage.getItem('users')) || [];
             if (usuarioEistente === []) {
                 Swal.fire({
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     text: 'No hay ningun usuario creado hasta el momento, porfavor, primero cree una cuenta!',
                 })
 
-            } else {
+            }else {
                 const index = usuarioEistente.findIndex((el) => el.email === email2Input.value)
                 if (index !== -1) {
                     if (usuarioEistente[index].email === email2Value && usuarioEistente[index].password === passwordValue) {
