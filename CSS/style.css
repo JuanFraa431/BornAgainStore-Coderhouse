@@ -769,12 +769,12 @@ footer {
 
 /* --------------------------redes----------------------------- */
 /* --------------------------Logos----------------------------- */
-.logo img {
+.logo .img-Logo {
   transition: all 0.5s;
   cursor: pointer;
   filter: invert(100%);
 }
-.logo img:hover {
+.logo .img-Logo:hover {
   transform: scale(1.2);
 }
 
@@ -904,10 +904,6 @@ body::-webkit-scrollbar-thumb:hover {
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
-
-
-
-
 
 .removing {
   -webkit-animation: scale-out-hor-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -1295,5 +1291,51 @@ body::-webkit-scrollbar-thumb:hover {
   box-shadow: 2px 2px 10px 0px rgba(174, 27, 27, 0.4);
 }
 /* fin tarjeta */
+
+.bodyCanvasPage {
+  padding: 0px !important;
+}
+.navOffCAnvas {
+  padding-left: 15px !important;
+}
+.formCanvas {
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+}
+
+.titulo-Canvas{ 
+  border-bottom: 1px solid rgb(73, 73, 73);
+  color:rgb(222, 222, 222);
+  margin-bottom: 10px;
+}
+.sesionIniciada {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  background-color: #1A1D20;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid rgb(73, 73, 73);
+}
+
+
+.nombreSesion {
+  margin-bottom: 0rem !important;
+}
+
+.sesionIniciada img {
+  padding: 0px 10px 0px 10px ;
+  width: 40px;
+  filter: invert(1);
+  transition: 0.2s all;
+}
+.sesionIniciada img:hover{
+  transform: scale(1.2);
+}
+
+#btn-CerrarSesion {
+  margin-right: 10px !important;
+}
 
 /*# sourceMappingURL=style.css.map */

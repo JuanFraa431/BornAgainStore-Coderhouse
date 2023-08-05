@@ -144,13 +144,13 @@ botonLimpiarCarrito.onclick = () => {
             }
             })
         setTimeout(() => {
-            localStorage.clear()
+            localStorage.removeItem('compra')
             contadorsito()
             let vaciar = document.getElementById("contenedorDeTodo")
             vaciar.innerHTML = `
                 <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
                 `
-            window.location.href = "tarjeta.html";
+            window.location.href = "Tarjeta.html";
         }, 1600);
     } else {
         Swal.fire({
@@ -172,7 +172,7 @@ function eliminarElementos() {
             let cantidadElimino = carritoEliminar[index].cantidad
             if (carritoEliminar.length === 1 && cantidadElimino === 1) {
                 console.log("quiero vaciar el local storage")
-                localStorage.clear()
+                localStorage.removeItem('compra')
                 carritoEliminar = []
                 let vaciar = document.getElementById("contenedorDeTodo")
                 vaciar.classList.add('removing');

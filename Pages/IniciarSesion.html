@@ -14,6 +14,8 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>BornAgainStore Argentina | Iniciar Sesion</title>
     <script src="https://kit.fontawesome.com/794b132898.js" crossorigin="anonymous"></script>
+    <!-- animaciones JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
@@ -41,7 +43,7 @@
     <header class="header__unete">
         <nav class="navbar navbar-dark fixed-top">
             <div class="container-fluid logo">
-                <a class="navbar-brand" href="../index.html"><img src="../Imagenes/Logo.png"
+                <a class="navbar-brand img-Logo" href="../index.html"><img src="../Imagenes/Logo.png"
                         alt="Logo BornAgainStore"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -103,13 +105,13 @@
 
             <div class="linea"></div>
 
-            <form class="form__sesion">
+            <form class="form__sesion" id="form__sesion">
                 <div class="mb-3">
                     <span class="form__sesion__texto">EMAIL</span>
-                    <input type="email" class="recuadro__email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="recuadro__email" id="recuadro__email" aria-describedby="emailHelp">
                     <div class="mb-3">
                         <span class="form__sesion__texto">CONTRASEÑA</span>
-                        <input type="password" class="recuadro__pass" id="exampleInputPassword1">
+                        <input type="password" class="recuadro__pass" id="recuadro__pass">
                         <a href="" class="explicacion2">Olvide mi contraceña</a>
                     </div>
                     <div id="boton__correccion">
@@ -125,7 +127,7 @@
 
 
 
-
+    <script src="../JavaScript/inciarSesion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
         integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
         crossorigin="anonymous"></script>

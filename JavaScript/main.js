@@ -143,13 +143,13 @@ botonLimpiarCarrito.onclick = () => {
 		}
 		})
         setTimeout(() => {
-            localStorage.clear()
+            localStorage.removeItem('compra')
             contadorsito()
             let vaciar = document.getElementById("contenedorDeTodo")
             vaciar.innerHTML = `
                 <p class="estilo" id="vacio">No hay productos en su carrito por el momento</p>
                 `
-            window.location.href = "./Pages/tarjeta.html";
+            window.location.href = "./Pages/Tarjeta.html";
         }, 1600);
     } else {
         Swal.fire({
@@ -168,7 +168,7 @@ function eliminarElementos() {
             let index = carritoEliminar.findIndex((el) => el.id === parseInt(e.target.id))
             let cantidadElimino = carritoEliminar[index].cantidad
             if (carritoEliminar.length === 1 && cantidadElimino === 1) {
-                localStorage.clear()
+                localStorage.removeItem('compra')
                 carritoEliminar = []
                 let vaciar = document.getElementById("contenedorDeTodo")
                 vaciar.classList.add('removing');
@@ -209,6 +209,55 @@ function eliminarElementos() {
     }
 }
 
+function userActivo() {
+    const usuarioIniciado = JSON.parse(localStorage.getItem("userActivo"))
+    let contenedorSesion = document.getElementById('sesionIniciada')
+    if (usuarioIniciado !== -1) {
+        contenedorSesion.style.display = "grid"
+        contenedorSesion.innerHTML = `<img  id="ImagenSesion" src="Imagenes/imagen-sesion.png" alt="">
+        <p class="nombreSesion">${usuarioIniciado.nombre}</p>
+        <button class="btn btn-danger" id="btn-CerrarSesion">Cerrar Sesion</button>`
+    }else {
+        contenedorSesion.style.display = "none"
+    }
+    const botonCerrarSesion = document.getElementById("btn-CerrarSesion")
+    botonCerrarSesion.onclick = (e) => {
+        let timerInterval
+		Swal.fire({
+        icon:'success',
+		title: 'Cerrando sesion...',
+		timer: 2000,
+		timerProgressBar: true,
+		didOpen: () => {
+			Swal.showLoading()
+			const b = Swal.getHtmlContainer().querySelector('b')
+			timerInterval = setInterval(() => {
+			b.textContent = Swal.getTimerLeft()
+			}, 100)
+		},
+		willClose: () => {
+			clearInterval(timerInterval)
+		}
+		}).then((result) => {
+		if (result.dismiss === Swal.DismissReason.timer) {
+			console.log('I was closed by the timer')
+		}
+		})
+        setTimeout(() => {
+            localStorage.removeItem('userActivo')
+            location.reload()
+        }, 2000);
+    }
+}
+
+function ejecutrarSiExiste() {
+    if (localStorage.getItem("userActivo") !== null ) {
+        userActivo()
+    }else {
+        console.log("todavia no inicio sesion")
+    }
+}
+
 
 function agregarProducto() {
     fetch("./Productos.json")
@@ -232,6 +281,7 @@ function agregarProducto() {
         }
     })
 }
+ejecutrarSiExiste() 
 agregarProducto()
 agregaCarrito()
 

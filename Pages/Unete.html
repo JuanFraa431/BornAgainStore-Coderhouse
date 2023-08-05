@@ -17,6 +17,8 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/794b132898.js" crossorigin="anonymous"></script>
+    <!-- animaciones JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
@@ -43,7 +45,7 @@
     <header class="header__unete">
         <nav class="navbar navbar-dark fixed-top">
             <div class="container-fluid logo">
-                <a class="navbar-brand" href="../index.html"><img src="../Imagenes/Logo.png"
+                <a class="navbar-brand img-Logo" href="../index.html"><img src="../Imagenes/Logo.png"
                         alt="Logo BornAgainStore"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -105,33 +107,33 @@
 
             <div class="linea"></div>
 
-            <form class="form__sesion">
+            <form class="form__sesion" id="form__sesion">
                 <div class="mb-3">
                     <div class="mb-3">
                         <span class="form__sesion__texto">NOMBRE Y APELLIDO</span>
-                        <input type="text" class="recuadro__pass" id="exampleInputPassword1">
+                        <input type="text" class="recuadro__pass" id="nombreYApellidoUnete">
                     </div>
                     <div class="mb-3">
                         <span class="form__sesion__texto">EMAIL</span>
-                        <input type="email" class="recuadro__pass" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="recuadro__pass" id="recuadroUnete__email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <span class="form__sesion__texto">TELEFONO (opcional)</span>
-                        <input type="tel" class="recuadro__pass" id="exampleInputPassword1">
+                        <input type="tel" class="recuadro__pass" id="recuadroUnete__Tel">
                     </div>
                     <div class="mb-3">
                         <span class="form__sesion__texto">CONTRASEÑA</span>
-                        <input type="password" class="recuadro__pass" id="exampleInputPassword1">
+                        <input type="password" class="recuadro__pass" id="recuadroUnete__pass">
                     </div>
                     <div class="mb-3">
                         <span class="form__sesion__texto">CONFIRMAR CONTRASEÑA</span>
-                        <input type="password" class="recuadro__pass" id="exampleInputPassword1">
+                        <input type="password" class="recuadro__pass" id="recuadroUnete__confirmPass">
                     </div>
                     <div class="mb-3">
                         <div class="g-recaptcha" data-sitekey="6Le1lrglAAAAAFXK2L-rPzTKjZ-28SWP2j_R3aaS"></div>
                     </div>
                     <div id="boton__correccion">
-                        <button type="submit" class="btn btn-outline-secondary">CREAR CUENTA</button>
+                        <button type="submit" class="btn btn-outline-secondary" id="btn-CrearCuenta">CREAR CUENTA</button>
                     </div>
                     <span class="cuenta">Ya tienes una cuenta? <a href="../Pages/IniciarSesion.html"
                             class="cuenta__nueva">ingresa aqui</a></span>
@@ -145,7 +147,7 @@
 
 
 
-
+    <script src="../JavaScript/Unete.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
         integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
         crossorigin="anonymous"></script>
