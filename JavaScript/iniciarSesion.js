@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const passwordInput = document.getElementById('recuadro__pass');
 
     // Evento de envío del formulario
-    loginForm.addEventListener('submit', function(event) {
+    loginForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Evita que se envíe el formulario
 
         // Obtenemos los valores de los campos de entrada
@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Debes ingresar un email y una contraseña!',
             })
             return;
-        }else if (usuarioActivo !== null) {
+        } else if (usuarioActivo !== null) {
             console.log(usuarioActivo)
             let timerInterval
             Swal.fire({
-                icon:'error',
-                title:'Error...',
+                icon: 'error',
+                title: 'Error...',
                 text: 'Primero debes cerrar sesion en el inicio!',
                 timer: 3000,
                 timerProgressBar: true,
@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     Swal.showLoading()
                     const b = Swal.getHtmlContainer().querySelector('b')
                     timerInterval = setInterval(() => {
-                    b.textContent = Swal.getTimerLeft()
+                        b.textContent = Swal.getTimerLeft()
                     }, 100)
                 },
                 willClose: () => {
                     clearInterval(timerInterval)
                 }
-                }).then((result) => {
+            }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
                     console.log('I was closed by the timer')
                 }
@@ -49,24 +49,24 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 window.location.href = '../index.html';
             }, 3000);
-        }else {
+        } else {
             let usuarioEistente = JSON.parse(localStorage.getItem('users')) || [];
-            if (usuarioEistente === []){
+            if (usuarioEistente === []) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error...',
                     text: 'No hay ningun usuario creado hasta el momento, porfavor, primero cree una cuenta!',
                 })
-                
-            }else {
+
+            } else {
                 const index = usuarioEistente.findIndex((el) => el.email === email2Input.value)
                 if (index !== -1) {
                     if (usuarioEistente[index].email === email2Value && usuarioEistente[index].password === passwordValue) {
-                        const mensaje = '¡Hola, ' +usuarioEistente[index].nombre + '!\n' +'¡Bienvenido denuevo a BornAgainStore!\n';
+                        const mensaje = '¡Hola, ' + usuarioEistente[index].nombre + '!\n' + '¡Bienvenido denuevo a BornAgainStore!\n';
                         let timerInterval
                         Swal.fire({
-                            icon:'success',
-                            title:'Inicio de sesion exitoso',
+                            icon: 'success',
+                            title: 'Inicio de sesion exitoso',
                             text: mensaje,
                             timer: 3000,
                             timerProgressBar: true,
@@ -74,13 +74,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                 Swal.showLoading()
                                 const b = Swal.getHtmlContainer().querySelector('b')
                                 timerInterval = setInterval(() => {
-                                b.textContent = Swal.getTimerLeft()
+                                    b.textContent = Swal.getTimerLeft()
                                 }, 100)
                             },
                             willClose: () => {
                                 clearInterval(timerInterval)
                             }
-                            }).then((result) => {
+                        }).then((result) => {
                             if (result.dismiss === Swal.DismissReason.timer) {
                                 console.log('I was closed by the timer')
                             }
@@ -91,16 +91,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         setTimeout(() => {
                             window.location.href = '../index.html';
                         }, 3000);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error...',
+                            text: 'El usuario o la contraseña no son correctos!',
+                        })
                     }
-                }else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error...',
-                        text: 'El usuario o la contraseña no son correctos!',
-                    })
                 }
             }
         }
     });
 });
-
