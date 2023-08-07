@@ -1,4 +1,14 @@
 // Esperamos a que el documento esté completamente cargado
+function verificoEmail() {
+    const emailInput = document.getElementById('recuadroUnete__email');
+    const emailValue = emailInput.value.trim().toLowerCase();
+    
+}
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Obtenemos el formulario y los campos de entrada
     const loginForm = document.getElementById('form__sesion');
@@ -19,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const passwordValue = passwordInput.value.trim();
         const passwordConfirmValue = passwordConfirmInput.value.trim();
 
-        // Comprobar si los campos están vacíos
-        if (nameValue === '' || emailValue === '' || passwordValue === '' || passwordConfirmValue === '') {
+        // Comprbar si los campos están vacíos
+        if (nameValue === '' || emailValue === '' || passwordValue === '' || passwordConfirmValue === ''){
             Swal.fire({
                 icon: 'error',
                 title: 'Error...',
@@ -28,7 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         }
         if(nameValue !== '' && emailValue !== '' && passwordValue !== '' && passwordConfirmValue !== '' && passwordValue === passwordConfirmValue ) {
-            let timerInterval
+            const verificarUsuario = JSON.parse(localStorage.getItem("users")) || []
+            let mail = verificarUsuario.find((el) => el.email === emailValue)
+            if (mail !== undefined) {
+                Swal.fire({
+                icon: 'error',
+                title: 'Error...',
+                text: 'El email ingresado ya se encuentra registrado. Prueba iniciando sesion.',
+                })
+            }else{
+                let timerInterval
                 Swal.fire({
                 icon:'success',
                 title: 'Creando usuario, porfavor aguarde...',
@@ -61,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Redirigir al usuario a otra página después del inicio de sesión exitoso
                 window.location.href = '../index.html';
             }, 3000);
-            
+            }
         }else {
             Swal.fire({
                 icon: 'error',

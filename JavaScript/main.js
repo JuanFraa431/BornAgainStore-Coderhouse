@@ -94,7 +94,7 @@ function agregaCarrito() {
                     carritoMostrado.id = `${carrito[0].id}-div` 
                     carritoMostrado.classList.add("contenedorProductosCarrito")
                     muestroCarrito.innerHTML = ``
-                    carritoMostrado.innerHTML = ` <p class="estilo" id="cantidad-${carrito[0].id}">Producto: ${carrito[0].nombre} x${carrito[0].cantidad} <br> Precio x unidad: $${carrito[0].precio}</p>
+                    carritoMostrado.innerHTML = `<p class="estilo" id="cantidad-${carrito[0].id}">Producto: ${carrito[0].nombre} x${carrito[0].cantidad} <br> Precio x unidad: $${carrito[0].precio}</p>
                     <button id="${carrito[0].id}" class="boton-elimino bg-dark fa-solid fa-x"></button>
                     <br>
                     <div class="linea2"></div>

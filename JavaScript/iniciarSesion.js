@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Obtenemos el formulario y los campos de entrada
     const loginForm = document.getElementById('form__sesion');
-    const email2Input = document.getElementById('recuadro__email');
+    const email2Input = document.getElementById('recuadro__email2');
     const passwordInput = document.getElementById('recuadro__pass');
 
     // Evento de envío del formulario
@@ -90,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         setTimeout(() => {
                             window.location.href = '../index.html';
                         }, 3000);
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error...',
-                            text: 'El usuario o la contraseña no son correctos!',
-                        })
                     }
+                }else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error...',
+                        text: 'El usuario o la contraseña no son correctos!',
+                    })
                 }
             }
         }

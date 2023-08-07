@@ -1,6 +1,6 @@
 /* --------------------------Extends----------------------------- */
 .container__filtro, .selector__paginas, .texto_nosotros, .container__texto_nosotros, .container__carru__nosotros, #boton__correccion,
-.simesale, .recuadro__pass, .recuadro__email, .form__sesion,
+.simesale, .recuadro__pass, .recuadro__email,.recuadro__email2, .form__sesion,
 .form__sesion2, .container__form__principal, .metodos-pago,
 .sections-footer-tres, .section-footer-dos, .container-titulo, .container__carrutop__mobile {
   display: flex;
@@ -414,6 +414,11 @@ footer a {
   width: 100%;
 }
 
+.recuadro__email2 {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
 .recuadro__pass {
   width: 100%;
 }
@@ -818,12 +823,20 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .contenedorProductosCarrito {
+  /* display: grid;
+  grid-template-columns: 2fr 2fr 1fr; 
+  grid-template-rows: auto 1fr; 
+  gap: 10px; */
   display: grid;
   grid-template-rows: 1fr 1fr auto;
   height: 100px;
   justify-content: space-between;
   gap: 10px;
 }
+
+/* .contenedorProductosCarrito img {
+  width: 10px;
+} */
 
 @keyframes fadeOut {
   0% { opacity: 1; transform: translateY(0); }
@@ -1332,10 +1345,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .sesionIniciada img:hover{
   transform: scale(1.2);
+  transition: 0.4s all;
 }
 
 #btn-CerrarSesion {
   margin-right: 10px !important;
 }
+
 
 /*# sourceMappingURL=style.css.map */
