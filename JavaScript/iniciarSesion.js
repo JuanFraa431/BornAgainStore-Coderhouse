@@ -91,12 +91,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         setTimeout(() => {
                             window.location.href = '../index.html';
                         }, 3000);
+                    }else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error...',
+                            text: 'El usuario o la contraseña no son correctos!',
+                        })
                     }
                 }else { /* Si la contraseña o el email esta mal avisa al usuario q verifique */
                     Swal.fire({
                         icon: 'error',
                         title: 'Error...',
-                        text: 'El usuario o la contraseña no son correctos!',
+                        text: 'El mail ingresado no se encuentra registrado!',
                     })
                 }
             }
