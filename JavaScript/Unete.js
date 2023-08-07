@@ -1,16 +1,5 @@
-// Esperamos a que el documento esté completamente cargado
-function verificoEmail() {
-    const emailInput = document.getElementById('recuadroUnete__email');
-    const emailValue = emailInput.value.trim().toLowerCase();
-    
-}
-
-
-
-
-
+/* Funcion para extraer los id de inputs */
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtenemos el formulario y los campos de entrada
     const loginForm = document.getElementById('form__sesion');
     const nameInput = document.getElementById('nombreYApellidoUnete');
     const emailInput = document.getElementById('recuadroUnete__email');
@@ -18,18 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const passwordInput = document.getElementById('recuadroUnete__pass');
     const passwordConfirmInput = document.getElementById('recuadroUnete__confirmPass');
 
-    // Evento de envío del formulario
+    /* Evento de envío del formulario */
     loginForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita que se envíe el formulario
+        event.preventDefault(); /* Evita que se envíe el formulario */
 
-        // Obtenemos los valores de los campos de entrada
+        /* Trae los valores de los campos de entrada de los inputs*/
         const nameValue = nameInput.value.trim();
         const emailValue = emailInput.value.trim().toLowerCase();
         const telValue = telefonoInput.value.trim();
         const passwordValue = passwordInput.value.trim();
         const passwordConfirmValue = passwordConfirmInput.value.trim();
 
-        // Comprbar si los campos están vacíos
+        /* Comprueba si los campos están vacíos */
         if (nameValue === '' || emailValue === '' || passwordValue === '' || passwordConfirmValue === ''){
             Swal.fire({
                 icon: 'error',
@@ -37,9 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Debes llenar todos los campos!',
             })
         }
+        /* Vuelve a verificar que los campos esten vacios y que las contraseñas coincidan */
         if(nameValue !== '' && emailValue !== '' && passwordValue !== '' && passwordConfirmValue !== '' && passwordValue === passwordConfirmValue ) {
             const verificarUsuario = JSON.parse(localStorage.getItem("users")) || []
             let mail = verificarUsuario.find((el) => el.email === emailValue)
+            /* Verifica que el mail ingresado no este registrado ya de antes */
             if (mail !== undefined) {
                 Swal.fire({
                 icon: 'error',
@@ -69,15 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 })
             setTimeout(() => {
-                // Obtener el array de usuarios del localStorage (si existe)
+                /* Obtener el array de usuarios del localStorage (si existe) */
                 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-                // Agregar el nuevo usuario al array
+                /* Agregar el nuevo usuario al array */
                 users.push({nombre: nameValue, email: emailValue, telefono: telValue, password: passwordValue});
-                // Almacenar el array actualizado en el localStorage
+                /* Almacenar el array actualizado en el localStorage */
                 localStorage.setItem('users', JSON.stringify(users));
 
-                // Redirigir al usuario a otra página después del inicio de sesión exitoso
+                /* Redirigir al usuario a otra página después del inicio de sesión exitoso */
                 window.location.href = '../index.html';
             }, 3000);
             }

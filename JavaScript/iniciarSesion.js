@@ -1,20 +1,18 @@
-
-// Esperamos a que el documento esté completamente cargado
+/* Funcion para extraer los id de inputs */
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtenemos el formulario y los campos de entrada
     const loginForm = document.getElementById('form__sesion');
     const email2Input = document.getElementById('recuadro__email2');
     const passwordInput = document.getElementById('recuadro__pass');
 
-    // Evento de envío del formulario
+    /* Evento de envío del formulario */
     loginForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Evita que se envíe el formulario
 
-        // Obtenemos los valores de los campos de entrada
+        /* Trae los valores de los campos de entrada de los inputs*/
         const email2Value = email2Input.value.trim().toLowerCase();
         const passwordValue = passwordInput.value.trim();
         let usuarioActivo = JSON.parse(localStorage.getItem('userActivo'))
-        // Comprobar si los campos están vacíos
+        /* Comprueba si los campos están vacíos */
         if (email2Value === '' || passwordValue === '') {
             Swal.fire({
                 icon: 'error',
@@ -50,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 3000);
         }else {
             let usuarioEistente = JSON.parse(localStorage.getItem('users')) || [];
+            /* Verifica que almenos exista un usuario creado con antelacion */
             if (usuarioEistente === []) {
                 Swal.fire({
                     icon: 'error',
@@ -58,8 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
 
             }else {
+                /* Encuentra el indice del email ingresado, y lo busca dentro del array del localStorage */
                 const index = usuarioEistente.findIndex((el) => el.email === email2Input.value)
                 if (index !== -1) {
+                    /* Comprueba que los valores ingresados coincidan con los que ya estan cargados en el localStorage */
                     if (usuarioEistente[index].email === email2Value && usuarioEistente[index].password === passwordValue) {
                         const mensaje = '¡Hola, ' + usuarioEistente[index].nombre + '!\n' + '¡Bienvenido denuevo a BornAgainStore!\n';
                         let timerInterval
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             window.location.href = '../index.html';
                         }, 3000);
                     }
-                }else {
+                }else { /* Si la contraseña o el email esta mal avisa al usuario q verifique */
                     Swal.fire({
                         icon: 'error',
                         title: 'Error...',

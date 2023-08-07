@@ -1,4 +1,4 @@
-
+/* Funcion que verifica que que el localStorage este vacio al momento de entrar en la pagina, si ya habia elementos, los coloca dentro del carrito que se muestra */
 const verifico = JSON.parse(localStorage.getItem("compra"))
 if (!verifico) {
     let contenedorVerificacion = document.getElementById("contenedorDeTodo")
@@ -22,7 +22,7 @@ if (!verifico) {
     }
 }
 
-
+/* Funcion que permite tener un contador en tiempo real de la cantidad de elementos cargados en el carrito */
 function contadorsito() {
     let numero = 0
     let precioTotal = 0
@@ -45,6 +45,8 @@ function contadorsito() {
 
 let compruebo2 = []
 
+
+/* Funcion para agregar productos al contenedor del carrito, verifica que alla elementos,que sean nuevos o que se repitan y se vuelven a sumar a la cantidad  */
 function agregaCarrito() {
     fetch("./Productos.json")
     .then((response) => response.json())
@@ -117,6 +119,8 @@ function agregaCarrito() {
     })
 }
 
+
+/* esta funcion permite poder procesar la compra y simular una carga de tarjeta, en si elimina del localStorage los elementos del carrito */
 let botonLimpiarCarrito = document.getElementById('finalCompra')
 botonLimpiarCarrito.onclick = () => {
     const carritoCompruebo = JSON.parse(localStorage.getItem("compra"))
@@ -160,6 +164,8 @@ botonLimpiarCarrito.onclick = () => {
     }
 }
 
+
+/* Funcion que permite borrar elemento x elemento del localStorage y del contenedor visual del carrito */
 function eliminarElementos() {
     let botoncito = document.getElementsByClassName("boton-elimino")
     for (const boton of botoncito) {
@@ -209,6 +215,7 @@ function eliminarElementos() {
     }
 }
 
+/* funcion que permite verificar si hay una sesion iniciada y cerrar sesion de la misma*/
 function userActivo() {
     const usuarioIniciado = JSON.parse(localStorage.getItem("userActivo"))
     let contenedorSesion = document.getElementById('sesionIniciada')
@@ -250,6 +257,7 @@ function userActivo() {
     }
 }
 
+/* Funcion para solucionar un error de consola */
 function ejecutrarSiExiste() {
     if (localStorage.getItem("userActivo") !== null ) {
         userActivo()
@@ -258,7 +266,7 @@ function ejecutrarSiExiste() {
     }
 }
 
-
+/* Funcion que muestra los productos en el index atravez de un fetch de los productos que se encuentran en el .json */
 function agregarProducto() {
     fetch("./Productos.json")
     .then((response) => response.json())

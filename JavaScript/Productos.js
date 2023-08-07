@@ -1,4 +1,4 @@
-
+/* Todas las funcionalidades son las mismas a las explicadas en el archivo main.js */
 const verifico = JSON.parse(localStorage.getItem("compra"))
 if (!verifico) {
     let contenedorVerificacion = document.getElementById("contenedorDeTodo")
